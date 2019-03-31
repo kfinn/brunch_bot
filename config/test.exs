@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :brunch_bot, BrunchBot.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "brunch_bot",
+  password: "password",
   database: "brunch_bot_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
