@@ -1,0 +1,6 @@
+<h1>Events</h1>
+<%= for event <- @events do %>
+  <div>
+    <a href="<%= Routes.event_path(@conn, :show, event.id) %>"><%= event.starting_at %></a>
+  </div>
+<% end %>

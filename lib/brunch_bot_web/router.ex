@@ -16,7 +16,8 @@ defmodule BrunchBotWeb.Router do
   scope "/", BrunchBotWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", EventController, :index
+    resources "/events", EventController
   end
 
   # Other scopes may use custom stacks.
