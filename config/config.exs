@@ -30,3 +30,30 @@ config :phoenix, :json_library, Jason
 import_config "#{Mix.env()}.exs"
 
 config :tesla, adapter: Tesla.Adapter.Hackney
+
+# %% Coherence Configuration %%   Don't remove this line
+config :coherence,
+  user_schema: BrunchBot.Coherence.User,
+  repo: BrunchBot.Repo,
+  module: BrunchBot,
+  web_module: BrunchBotWeb,
+  router: BrunchBotWeb.Router,
+  password_hashing_alg: Comeonin.Bcrypt,
+  messages_backend: BrunchBotWeb.Coherence.Messages,
+  registration_permitted_attributes: [
+    "email",
+    "name",
+    "password",
+    "current_password",
+    "password_confirmation"
+  ],
+  invitation_permitted_attributes: ["name", "email"],
+  password_reset_permitted_attributes: [
+    "reset_password_token",
+    "password",
+    "password_confirmation"
+  ],
+  session_permitted_attributes: ["remember", "email", "password"],
+  opts: [:authenticatable]
+
+# %% End Coherence Configuration %%

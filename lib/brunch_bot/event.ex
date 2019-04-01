@@ -4,6 +4,8 @@ defmodule BrunchBot.Event do
 
   schema "events" do
     field :starting_at, :utc_datetime
+    has_many :event_memberships, BrunchBot.EventMembership
+    has_many :users, through: [:event_memberships, :user]
 
     timestamps()
   end

@@ -20,7 +20,7 @@ defmodule BrunchBot.MixProject do
   def application do
     [
       mod: {BrunchBot.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :coherence]
     ]
   end
 
@@ -34,6 +34,7 @@ defmodule BrunchBot.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:coherence, github: "johannesE/coherence"},
       {:ecto_sql, "~> 3.0"},
       {:gettext, "~> 0.11"},
       {:hackney, "~> 1.14"},
