@@ -42,6 +42,7 @@ defmodule BrunchBotWeb do
       import BrunchBotWeb.ErrorHelpers
       import BrunchBotWeb.Gettext
       alias BrunchBotWeb.Router.Helpers, as: Routes
+      alias PhoenixBootstrapForm, as: PBF
     end
   end
 

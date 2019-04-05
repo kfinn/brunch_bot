@@ -31,13 +31,12 @@ defmodule BrunchBotWeb.Router do
 
   scope "/", BrunchBotWeb do
     pipe_through :browser
-
-    get "/", EventController, :index
   end
 
   scope "/", BrunchBotWeb do
     pipe_through :protected
 
+    get "/", EventController, :index
     resources "/events", EventController
   end
 end

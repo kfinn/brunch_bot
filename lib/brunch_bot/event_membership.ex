@@ -14,7 +14,7 @@ defmodule BrunchBot.EventMembership do
     event_membership
     |> BrunchBot.Repo.preload([:event, :user])
     |> cast(attrs, [:event_id, :user_id])
-    |> put_assoc(:event, attrs.event, required: true)
-    |> put_assoc(:user, attrs.user, required: true)
+    |> put_assoc(:event, attrs.event)
+    |> put_assoc(:user, attrs.user)
   end
 end
